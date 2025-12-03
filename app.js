@@ -10,7 +10,7 @@ navButtons.forEach((btn) => {
     const targetSelector = btn.getAttribute('data-scroll');
     const el = document.querySelector(targetSelector);
 
-    // active button
+    // активная кнопка
     navButtons.forEach((b) => b.classList.remove('active'));
     btn.classList.add('active');
 
@@ -20,7 +20,7 @@ navButtons.forEach((btn) => {
         behavior: 'smooth',
       });
 
-      // orange glow
+      // оранжевая подсветка секции
       allSections.forEach((sec) => sec.classList.remove('section-highlight'));
       el.classList.add('section-highlight');
       setTimeout(() => el.classList.remove('section-highlight'), 900);
@@ -29,16 +29,16 @@ navButtons.forEach((btn) => {
 });
 
 // ===============================
-// 2. Click on card = open official site (except buttons/links)
+// 2. Клик по карточке = открыть сайт в новой вкладке
+//    (кроме кликов по кнопкам/ссылкам внутри)
 // ===============================
 
 document.querySelectorAll('.service-card').forEach((card) => {
   const url = card.getAttribute('data-url');
 
   card.addEventListener('click', (event) => {
-    // don't trigger when clicking on buttons or <a>
     if (event.target.closest('.primary-btn') || event.target.closest('a')) {
-      return;
+      return; // внутри карточки нажали кнопку/ссылку — не трогаем
     }
     if (!url) return;
     window.open(url, '_blank', 'noopener');
@@ -46,7 +46,9 @@ document.querySelectorAll('.service-card').forEach((card) => {
 });
 
 // ===============================
-// 3. Modal mini view for buttons with data-frame-url
+// 3. Modal mini view для кнопок с data-frame-url
+//    ДЕСКТОП: показываем модалку с iframe
+//    МОБИЛКА (<768px): просто открываем сайт в новой вкладке
 // ===============================
 
 const overlay = document.getElementById('frameOverlay');
@@ -54,25 +56,32 @@ const iframe = document.getElementById('frameOverlayIframe');
 const closeBtn = overlay ? overlay.querySelector('.close-btn') : null;
 
 if (overlay && iframe && closeBtn) {
-  // open modal
+  // открыть mini-view / вкладку
   document.querySelectorAll('.primary-btn[data-frame-url]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const url = btn.getAttribute('data-frame-url');
       if (!url) return;
 
+      // 📱 МОБИЛКА: без iframe, сразу новая вкладка
+      if (window.innerWidth < 768) {
+        window.open(url, '_blank', 'noopener');
+        return;
+      }
+
+      // 💻 ДЕСКТОП: модальное окно с iframe
       iframe.src = url;
       overlay.classList.remove('hidden');
     });
   });
 
-  // close by button
+  // закрыть по крестику
   closeBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
     iframe.src = '';
   });
 
-  // close by clicking on dark background
+  // закрыть по клику по тёмному фону
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
       overlay.classList.add('hidden');
