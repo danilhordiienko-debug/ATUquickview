@@ -43,65 +43,36 @@ document.querySelectorAll('.service-card').forEach((card) => {
 });
 
 // ===============================
-// 3. MINI VIEW: десктоп = модалка, мобилка = новая вкладка
+// 3. MINI VIEW: всегда модалка с iframe
 // ===============================
 
 const overlay = document.getElementById('frameOverlay');
 const iframe = document.getElementById('frameOverlayIframe');
 const closeBtn = overlay ? overlay.querySelector('.close-btn') : null;
 
-// универсальный селектор: и data-frame-url, и старый data-frame
-const miniViewButtons = document.querySelectorAll(
-  '.primary-btn[data-frame-url], .primary-btn[data-frame]'
-);
-
-if (miniViewButtons.length && (overlay && iframe && closeBtn)) {
-  miniViewButtons.forEach((btn) => {
+if (overlay && iframe && closeBtn) {
+  document.querySelectorAll('.primary-btn[data-frame-url]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
 
-      const url =
-        btn.getAttribute('data-frame-url') || btn.getAttribute('data-frame');
+      const url = btn.getAttribute('data-frame-url');
       if (!url) return;
 
-      const isMobile = window.innerWidth < 768;
-
-      if (isMobile) {
-        // 📱 телефоны — просто открыть полноценный сайт
-        window.open(url, '_blank', 'noopener');
-        return;
-      }
-
-      // 💻 десктоп — модальное окно с iframe
       iframe.src = url;
       overlay.classList.remove('hidden');
     });
   });
 
-  // закрыть по крестику
   closeBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
     iframe.src = '';
   });
 
-  // закрыть по клику по фону
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
       overlay.classList.add('hidden');
       iframe.src = '';
     }
-  });
-} else {
-  // если модалки нет, хотя бы открываем ссылки
-  miniViewButtons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const url =
-        btn.getAttribute('data-frame-url') || btn.getAttribute('data-frame');
-      if (!url) return;
-      window.open(url, '_blank', 'noopener');
-    });
   });
 }
