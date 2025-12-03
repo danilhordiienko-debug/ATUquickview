@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ATU Student Hub – QuickView</title>
+  <link rel="icon" type="image/png" href="icon.PNG" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo">
+      <img src="icon.PNG" alt="ATU logo" class="logo-icon" />
+      <span class="logo-text">ATU QuickView</span>
+    </div>
+
+    <nav class="top-nav">
+      <button data-scroll="#overview" class="active">Overview</button>
+      <button data-scroll="#moodle">Moodle</button>
+      <button data-scroll="#timetable">Timetables</button>
+      <button data-scroll="#library">Library</button>
+      <button data-scroll="#outlook">Outlook</button>
+      <button data-scroll="#studenthub">Student Hub</button>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page">
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="section">
+      <h1 class="page-title">ATU Student Hub – QuickView</h1>
+      <p class="page-subtitle">
+        A single student-friendly start page that brings together Moodle,
+        timetables, library, email and Student Hub in one place.
+      </p>
+
+      <div class="overview-grid">
+        <div class="overview-card">
+          <h2>Why this prototype?</h2>
+          <p>
+            Students currently jump between many different ATU systems:
+            Moodle, online timetables, Outlook, the Library website and the
+            Student Hub portal. This page shows how everything could be
+            collected into one simple starting point.
+          </p>
+        </div>
+
+        <div class="overview-card">
+          <h2>What can you do here?</h2>
+          <ul>
+            <li>Open official ATU services in one click.</li>
+            <li>See a short explanation of each service.</li>
+            <li>Try prototype “mini view” of some services.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOODLE -->
+    <section id="moodle" class="section">
+      <h2>Moodle</h2>
+      <p class="section-subtitle">
+        Access your course pages, assignments and learning materials.
+      </p>
+
+      <div class="service-card" data-url="https://vlegalwaymayo.atu.ie">
+        <div class="service-icon">🧩</div>
+        <div class="service-content">
+          <h3>ATU Moodle (Galway–Mayo)</h3>
+          <p>
+            Use Moodle to view modules, download lecture notes, submit
+            assignments and follow course announcements.
+          </p>
+          <ul class="service-list">
+            <li>Central place for module content and resources.</li>
+            <li>Assignment submissions and grades.</li>
+            <li>Announcements and messages from lecturers.</li>
+          </ul>
+          <!-- mini view in modal -->
+          <button
+            class="primary-btn"
+            data-frame-url="https://vlegalwaymayo.atu.ie"
+          >
+            Open Moodle mini view
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMETABLES -->
+    <section id="timetable" class="section">
+      <h2>Timetables</h2>
+      <p class="section-subtitle">
+        Check your class timetable and room information online.
+      </p>
+
+      <div class="service-card" data-url="https://timetables.atu.ie">
+        <div class="service-icon">🕒</div>
+        <div class="service-content">
+          <h3>ATU Timetables</h3>
+          <p>
+            Search for your weekly timetable by programme, module or location
+            and see where you should be and when.
+          </p>
+          <ul class="service-list">
+            <li>View weekly timetable and room locations.</li>
+            <li>Check updates if times or rooms change.</li>
+            <li>Filter by programme, module, or lecturer.</li>
+          </ul>
+          <button
+            class="primary-btn"
+            data-frame-url="https://timetables.atu.ie"
+          >
+            Open Timetables mini view
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIBRARY -->
+    <section id="library" class="section">
+      <h2>Library</h2>
+      <p class="section-subtitle">
+        Find books, ebooks, databases and study-space information.
+      </p>
+
+      <div
+        class="service-card"
+        data-url="https://www.atu.ie/student-life/library"
+      >
+        <div class="service-icon">📚</div>
+        <div class="service-content">
+          <h3>ATU Library</h3>
+          <p>
+            Use the Library site to search the catalogue, access online databases,
+            and check opening hours for each campus.
+          </p>
+          <ul class="service-list">
+            <li>Search for physical books and ebooks.</li>
+            <li>Access academic databases and journals.</li>
+            <li>Find opening hours and study-space info.</li>
+          </ul>
+          <a
+            href="https://www.atu.ie/student-life/library"
+            target="_blank"
+            rel="noopener"
+            class="primary-btn open-site-btn"
+          >
+            Visit Library Website
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTLOOK -->
+    <section id="outlook" class="section">
+      <h2>Outlook Email</h2>
+      <p class="section-subtitle">
+        Quickly jump to your official ATU email inbox.
+      </p>
+
+      <div class="service-card" data-url="https://outlook.office.com/mail/">
+        <div class="service-icon">📧</div>
+        <div class="service-content">
+          <h3>ATU Outlook</h3>
+          <p>
+            All official communication from ATU is sent to your student email.
+            Check this regularly for important updates and deadlines.
+          </p>
+          <ul class="service-list">
+            <li>Receive messages from lecturers and support staff.</li>
+            <li>Get notifications about exams and deadlines.</li>
+            <li>Use calendar and tasks across devices.</li>
+          </ul>
+          <a
+            href="https://outlook.office.com/mail/"
+            target="_blank"
+            rel="noopener"
+            class="primary-btn open-site-btn"
+          >
+            Open Outlook in New Tab
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT HUB -->
+    <section id="studenthub" class="section">
+      <h2>Student Hub</h2>
+      <p class="section-subtitle">
+        Access services like fees, registration, exam info and support.
+      </p>
+
+      <div class="service-card" data-url="https://studenthub.atu.ie">
+        <div class="service-icon">🎓</div>
+        <div class="service-content">
+          <h3>ATU Student Hub</h3>
+          <p>
+            Student Hub is the main portal for important administrative tasks
+            like registration, fees, exam results and student support requests.
+          </p>
+          <ul class="service-list">
+            <li>View exam timetables and results.</li>
+            <li>Check fees and registration details.</li>
+            <li>Find links to student support services.</li>
+          </ul>
+          <button
+            class="primary-btn"
+            data-frame-url="https://studenthub.atu.ie"
+          >
+            Open Student Hub mini view
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT & BLOG LINKS -->
+    <section id="project-blog" class="section">
+      <h2>Project &amp; Blog</h2>
+      <p class="section-subtitle">
+        Read more about the idea, the poster design and how this ATU QuickView prototype was built.
+      </p>
+
+      <div class="blog-link-grid">
+        <a class="blog-link-card" href="project.html">
+          <h3>Project &amp; Team Info</h3>
+          <p>Overview of the problem, solution and team roles.</p>
+        </a>
+        <a class="blog-link-card" href="blog-poster.html">
+          <h3>Blog: Poster Story</h3>
+          <p>How the ATU QuickView poster was designed to catch students’ attention.</p>
+        </a>
+        <a class="blog-link-card" href="blog-need-hub.html">
+          <h3>Blog: Why We Need One Hub</h3>
+          <p>Why first-year students benefit from a single digital starting point.</p>
+        </a>
+        <a class="blog-link-card" href="blog-design.html">
+          <h3>Blog: Design &amp; Prototype</h3>
+          <p>Behind the scenes of building this prototype website.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    Prototype for coursework – no real API access, only links and iframe demos.
+  </footer>
+
+  <!-- MODAL MINI VIEW -->
+  <div id="frameOverlay" class="overlay hidden">
+    <div class="modal-window">
+      <button class="close-btn">✕</button>
+      <iframe
+        id="frameOverlayIframe"
+        class="modal-iframe"
+        src=""
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

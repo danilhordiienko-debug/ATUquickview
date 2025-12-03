@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog – Designing the ATU QuickView Prototype</title>
+  <link rel="icon" type="image/png" href="icon.PNG" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <img src="icon.PNG" alt="ATU Logo" class="logo-icon" />
+      <span class="logo-text">ATU QuickView</span>
+    </div>
+
+    <nav class="top-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="project.html" class="nav-link">Project &amp; Team</a>
+      <a href="blog-poster.html" class="nav-link">Poster Blog</a>
+      <a href="blog-need-hub.html" class="nav-link">Student Hub Blog</a>
+      <a href="blog-design.html" class="nav-link nav-link-active">Design Blog</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <h1 class="page-title">Designing the ATU QuickView Prototype</h1>
+      <p class="page-subtitle">
+        From early sketches to a working HTML/CSS prototype that could one day
+        grow into a real student portal.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Starting with the user journey</h2>
+      <p>
+        The design process began with a simple question: what does an ATU student
+        actually do in a normal week? Mapping the journey showed that they move
+        between several digital touchpoints – Moodle for modules, timetables for
+        rooms, Outlook for communication, the Library for resources and Student
+        Hub for admin tasks. The prototype was planned as a “first stop” that
+        connects all of these points in a friendly way.
+      </p>
+      <p>
+        Early wireframes focused on grouping services by purpose and keeping the
+        amount of text short. Each service card needed just enough description
+        so that a first-year student could understand what the button would do
+        without reading a long paragraph.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Visual design decisions</h2>
+      <p>
+        The interface uses a clean white background with soft blue gradients to
+        echo ATU branding while keeping the mood light and modern. The service
+        cards have rounded corners, subtle shadows and colourful icons to make
+        each system feel approachable instead of intimidating.
+      </p>
+      <p>
+        Buttons are designed with strong contrast and clear labels such as
+        “Open Moodle mini view” or “Open Outlook in New Tab”. This reduces the
+        cognitive load on the user and supports accessibility. The layout remains
+        responsive so that the page can be viewed on laptops, tablets and phones.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Implementing the prototype</h2>
+      <p>
+        The prototype is built using semantic HTML, a custom CSS file and a small
+        JavaScript file. JavaScript handles smooth scrolling for the top navigation
+        and toggles the embedded mini views using simple classes. This keeps the
+        code easy to understand and suitable for an Interaction Design or Project
+        Management assignment, while still feeling like a real product.
+      </p>
+      <p>
+        Although the site does not integrate with official ATU APIs, it links to
+        the live Moodle, timetable, library, Outlook and Student Hub sites. This
+        makes the prototype realistic enough for usability testing with students
+        and offers a strong foundation if the university ever chooses to develop
+        a more advanced dashboard.
+      </p>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    Blog post – Behind the design of ATU QuickView.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
