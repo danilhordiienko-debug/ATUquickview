@@ -9,6 +9,19 @@
 </head>
 <body>
 
+  <!-- MODAL MINI VIEW -->
+  <div id="frameOverlay" class="overlay hidden">
+    <div class="modal-window">
+      <button class="close-btn">✕</button>
+      <iframe
+        id="frameOverlayIframe"
+        class="modal-iframe"
+        src=""
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header class="main-header">
     <div class="logo">
@@ -28,7 +41,6 @@
 
   <!-- MAIN -->
   <main class="page">
-
     <!-- OVERVIEW -->
     <section id="overview" class="section">
       <h1 class="page-title">ATU Student Hub – QuickView</h1>
@@ -79,7 +91,6 @@
             <li>Assignment submissions and grades.</li>
             <li>Announcements and messages from lecturers.</li>
           </ul>
-          <!-- mini view in modal -->
           <button
             class="primary-btn"
             data-frame-url="https://vlegalwaymayo.atu.ie"
@@ -171,9 +182,9 @@
             Check this regularly for important updates and deadlines.
           </p>
           <ul class="service-list">
-            <li>Receive messages from lecturers and support staff.</li>
-            <li>Get notifications about exams and deadlines.</li>
-            <li>Use calendar and tasks across devices.</li>
+            <li>Messages from lecturers and staff.</li>
+            <li>Notifications about exams and deadlines.</li>
+            <li>Calendar and tasks across devices.</li>
           </ul>
           <a
             href="https://outlook.office.com/mail/"
@@ -248,19 +259,6 @@
   <footer class="page-footer">
     Prototype for coursework – no real API access, only links and iframe demos.
   </footer>
-
-  <!-- MODAL MINI VIEW -->
-  <div id="frameOverlay" class="overlay hidden">
-    <div class="modal-window">
-      <button class="close-btn">✕</button>
-      <iframe
-        id="frameOverlayIframe"
-        class="modal-iframe"
-        src=""
-        loading="lazy"
-      ></iframe>
-    </div>
-  </div>
 
   <script src="app.js"></script>
 </body>
